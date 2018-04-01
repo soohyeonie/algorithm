@@ -1,0 +1,15 @@
+def maxv(a,b):
+	if a>b:
+		return a
+	else:
+		return b
+
+i=2
+n=600851475143
+ans=0
+while i<=n:
+	while n%i==0:
+		n/=i
+		ans=maxv(ans,i)
+	i+=1
+print(ans)
