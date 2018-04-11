@@ -4,10 +4,8 @@ using namespace std;
 int N;
 int T[16];
 int P[16];
-int ans;
 
 int func(int t) {
-	if(t>15) return 0;
 	if(t+T[t]-1<=N&&t+1<=N) return func(t+1) > P[t]+func(t+T[t])? func(t+1) : P[t]+func(t+T[t]);
 	if(t+T[t]-1>N&&t+1<=N) return func(t+1);
 	if(t+T[t]-1<=N&&t+1>N) return P[t]+func(t+1);
